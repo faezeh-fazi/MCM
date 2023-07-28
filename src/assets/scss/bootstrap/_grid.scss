@@ -26,6 +26,7 @@
 
 @if $enable-grid-classes {
   .row {
+    row-gap: 35px;
     @include make-row();
   }
 

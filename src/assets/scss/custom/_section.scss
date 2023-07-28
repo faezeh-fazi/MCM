@@ -1,6 +1,6 @@
 .section {
     position: relative;
-    padding-top: $spacer * 4;
+    padding-top: $spacer * 1;
     padding-bottom: $spacer * 4;
 }
 
@@ -483,7 +483,7 @@
 
 // Profile cover
 .section-profile-cover {
-    height: 580px;
+    height: 480px;
     background-size: cover;
     background-position: center center;
 }
