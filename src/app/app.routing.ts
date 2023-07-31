@@ -9,6 +9,7 @@ import { SignupComponent } from "./signup/signup.component";
 import { LandingComponent } from "./landing/landing.component";
 import { LoginComponent } from "./login/login.component";
 import { ProductsComponent } from "./products/products.component";
+import { ProductDetailsComponent } from "./product-details/product-details.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "login", component: LoginComponent },
   { path: "category/:categoryName", component: ProductsComponent },
+  { path: "product-details/:id", component: ProductDetailsComponent }, // Add the product details route
+
   { path: "", redirectTo: "home", pathMatch: "full" },
 ];
 

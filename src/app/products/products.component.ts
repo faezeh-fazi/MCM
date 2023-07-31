@@ -14,6 +14,11 @@ export class ProductsComponent implements OnInit {
   itemsPerPage = 6; // Adjust the number of items per page as needed
   totalPages: number[] = [];
 
+  breadcrumbItems = [
+    { label: 'Home', link: '/' },
+    { label: 'Products', link: '/category/categoryname' },
+    { label: 'Product Name', link: '/products/product-id' },
+  ];
   constructor(private productService: ProductService, private route: ActivatedRoute) {}
 
   ngOnInit() {

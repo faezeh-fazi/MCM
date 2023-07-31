@@ -16,6 +16,13 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { ProductsModule } from './products/products.module';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactSellerComponent } from './contact-seller/contact-seller.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +33,9 @@ import { ProductsModule } from './products/products.module';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
+    ProductDetailsComponent,
+    ContactSellerComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,11 @@ import { ProductsModule } from './products/products.module';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-    ProductsModule
+    ProductsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatDialogModule,
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
