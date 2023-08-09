@@ -1,0 +1,29 @@
+<div class="sidebar mt-3">
+  <form [formGroup]="filterForm" (ngSubmit)="applyFilter()" class="product-filter-form">
+    <div class="form-group">
+      <label for="minPrice">Min Price</label>
+      <input type="number" placeholder="Min Price" class="form-control" formControlName="minPrice" id="minPrice">
+    </div>
+    <div class="form-group">
+      <label for="maxPrice">Max Price</label>
+      <input type="number" placeholder="Max Price" class="form-control" formControlName="maxPrice" id="maxPrice">
+    </div>
+    <div class="form-group">
+      <label for="category">Color</label>
+      <select class="form-control" aria-placeholder="Select Color" formControlName="category" id="category">
+        <option value="" selected>Select Color</option>
+        <option value="services">Services</option>
+        <option value="electronics">Electronics</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select class="form-control" formControlName="location" id="location">
+        <option value="">Select Location</option>
+        <option value="new-york">New York</option>
+        <option value="los-angeles">Los Angeles</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Apply Filter</button>
+  </form>
+</div>

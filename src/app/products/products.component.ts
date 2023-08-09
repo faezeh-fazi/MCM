@@ -28,6 +28,12 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  onFilterApplied(filterOptions: any) {
+    // Implement filtering logic based on filterOptions
+    // For example, filter products by name and price range
+    // Update this.products with the filtered results
+  }
+
   loadProductsByCategory(categoryName: string) {
     this.productService.getProductsByCategory(categoryName).subscribe((products) => {
       this.products = products;

@@ -16,9 +16,23 @@ export class HomeComponent implements OnInit {
   cardItems: CardItem[] = [
     {
       icon: "ni ni-check-bold",
+      name: "vehicles",
+      title: "Vehicles",
+      color: "warning",
+      description: "Description for Download Argon",
+    },
+    {
+      icon: "ni ni-check-bold",
+      name: "education",
+      title: "Education",
+      color: "primary",
+      description: "Description for Download Argon",
+    },
+    {
+      icon: "ni ni-check-bold",
       name: "services",
       title: "Services",
-      color: "primary",
+      color: "warning",
       description: "Description for Download Argon",
     },
     {

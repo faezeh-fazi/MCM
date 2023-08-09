@@ -10,17 +10,25 @@ import { LandingComponent } from "./landing/landing.component";
 import { LoginComponent } from "./login/login.component";
 import { ProductsComponent } from "./products/products.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
+import { LayoutComponent } from "./layout/layout.component";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "user-profile", component: ProfileComponent },
-  { path: "register", component: SignupComponent },
-  { path: "landing", component: LandingComponent },
-  { path: "login", component: LoginComponent },
-  { path: "category/:categoryName", component: ProductsComponent },
-  { path: "product-details/:id", component: ProductDetailsComponent }, // Add the product details route
+  {
+    path: "",
+    component: LayoutComponent,
+    children: [
+      { path: "", component: HomeComponent },
+      { path: "user-profile", component: ProfileComponent },
+      { path: "register", component: SignupComponent },
+      { path: "landing", component: LandingComponent },
+      { path: "login", component: LoginComponent },
+      { path: "category/:categoryName", component: ProductsComponent },
+      { path: "product-details/:id", component: ProductDetailsComponent },
 
-  { path: "", redirectTo: "home", pathMatch: "full" },
+      { path: "", redirectTo: "home", pathMatch: "full" },
+    ],
+  },
+
 ];
 
 @NgModule({

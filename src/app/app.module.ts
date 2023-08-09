@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
@@ -23,34 +23,39 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { LayoutComponent } from './layout/layout.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SignupComponent,
-    LandingComponent,
-    ProfileComponent,
-    NavbarComponent,
-    FooterComponent,
-    LoginComponent,
-    ProductDetailsComponent,
-    ContactSellerComponent,
+    declarations: [
+        AppComponent,
+        SignupComponent,
+        LandingComponent,
+        ProfileComponent,
+        NavbarComponent,
+        FooterComponent,
+        LoginComponent,
+        ProductDetailsComponent,
+        ContactSellerComponent,
+        LayoutComponent,
 
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    FormsModule,
-    RouterModule,
-    AppRoutingModule,
-    HomeModule,
-    ProductsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatDialogModule,
-    BreadcrumbModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        NgbModule,
+        FormsModule,
+        RouterModule,
+        AppRoutingModule,
+        HomeModule,
+        ProductsModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatDialogModule,
+        BreadcrumbModule,
+        ReactiveFormsModule,
+    ]
 })
 export class AppModule { }
