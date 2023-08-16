@@ -2,9 +2,7 @@
 
 .btn {
     position: relative;
-    text-transform: $btn-text-transform;
     transition: $transition-base;
-    will-change: transform;
     letter-spacing: $btn-letter-spacing;
     font-size: $input-btn-font-size;
     

@@ -1,7 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
 
+interface CardItem {
+    icon: string;
+    name: string;
+    title: string;
+    description: string;
+    color: string;
+  }
+  
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
@@ -11,10 +19,56 @@ export class NavbarComponent implements OnInit {
     public isCollapsed = true;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
-
-    constructor(public location: Location, private router: Router) {
+    cardItems: CardItem[] = [
+        {
+          icon: "ni ni-check-bold",
+          name: "vehicles",
+          title: "Vehicles",
+          color: "warning",
+          description: "Description for Download Argon",
+        },
+        {
+          icon: "ni ni-check-bold",
+          name: "education",
+          title: "Education",
+          color: "primary",
+          description: "Description for Download Argon",
+        },
+        {
+          icon: "ni ni-check-bold",
+          name: "services",
+          title: "Services",
+          color: "warning",
+          description: "Description for Download Argon",
+        },
+        {
+          icon: "ni ni-istanbul",
+          name: "electronic",
+          title: "Electronic",
+          color: "success",
+          description: "Description for Build Something",
+        },
+        {
+          icon: "ni ni-planet",
+          name: "furniture",
+          title: "Furniture",
+          color: "warning",
+          description: "Description for Prepare Launch",
+        },
+        {
+          icon: "ni ni-check-bold",
+          name: "job",
+          title: "Job",
+          color: "primary",
+          description: "Description for Download Argon",
+        },
+    
+        // Add more categories here as needed
+      ];
+    constructor(public location: Location, private router: Router, private elementRef: ElementRef) {
     }
 
+ 
     ngOnInit() {
       this.router.events.subscribe((event) => {
         this.isCollapsed = true;

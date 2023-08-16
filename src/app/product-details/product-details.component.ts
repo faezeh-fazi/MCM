@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Product } from "../models/Product";
 import { ProductService } from "../shared/services/product.service";
-import { MatDialog } from "@angular/material/dialog";
 import { ContactSellerComponent } from "../contact-seller/contact-seller.component";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-product-details",
@@ -16,15 +16,15 @@ export class ProductDetailsComponent implements OnInit {
   activeThumbnailIndex: number = 0;
 
   breadcrumbItems = [
-    { label: 'Home', link: '/' },
-    { label: 'Products', link: '/category/categoryname' },
-    { label: 'Product Name', link: '/products/product-id' },
+    { label: "Home", link: "/" },
+    { label: "Products", link: "/category/categoryname" },
+    { label: "Product Name", link: "/products/product-id" },
   ];
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private dialog: MatDialog
+    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
@@ -55,11 +55,8 @@ export class ProductDetailsComponent implements OnInit {
       this.product = product;
     });
   }
-  openContactDialog() {
-    // Open the dialog here
-    this.dialog.open(ContactSellerComponent, {
-      width: "400px",
-      data: this.product,
-    });
+  open(){
+    const modalRef = this.modalService.open(ContactSellerComponent);
+  modalRef.componentInstance.name = "Contact";
   }
 }

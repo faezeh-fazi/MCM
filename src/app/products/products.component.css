@@ -10,10 +10,16 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* .product-list{
+  top: 81px !important;
+  position: relative !important;
+  width: 100%;
+} */
+
 /* Product container */
 .product-container {
   max-width: 100%;
-  padding: 50px 20px;
+  padding: 150px 30px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

@@ -20,9 +20,9 @@
   <section class="section section-lg pt-lg-0">
     <div>
       <div class="container">
-        <div class="text-center pt-100 pb-100">
+        <div class="text-center pt-100 pb-100"  id="category-list">
 
-          <h1>Category</h1>
+          <h1 class="category-heading">Category</h1>
           <p>Select the category</p>
 
         </div>
@@ -46,7 +46,7 @@
                     >
                       <i [class]="card.icon"></i>
                     </div>
-                    <h6 [ngClass]="'text-' + card.color + ' text-uppercase'">
+                    <h6 [ngClass]="'text-' + card.color">
                       {{ card.title }}
                     </h6>
                   </div>

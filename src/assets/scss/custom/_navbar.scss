@@ -17,12 +17,11 @@
 .navbar-brand {
     font-size: $font-size-sm;
     font-weight: 600;
-    text-transform: uppercase;
     font-size: .875rem;
     letter-spacing: .05px;
 
     img {
-        height: 100px;
+        height: 60px;
     }
 }
 
@@ -183,10 +182,10 @@
     .navbar-transparent {
         .navbar-nav {
             .nav-link {
-                color: $navbar-dark-color;
+                color: #283448;
 
                 @include hover-focus {
-                    color: $navbar-dark-hover-color;
+                    color: #d56000;
                 }
 
                 &.disabled {

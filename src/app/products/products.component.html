@@ -1,22 +1,9 @@
 <main class="profile-page">
-  <section class="section-profile-cover section-shaped my-0">
-    <!-- Circles background -->
-    <div class="shape shape-style-1 shape-primary alpha-4">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </section>
-  <section class="section">
-    <div class="container product-container">
+  <section class="product-list">
+    <div class="product-container">
       <div class="row">
         <div class="col-lg-3 col-md-4">
-          <div class="card-filter shadow mt-lg-0 mt-3">
+          <div class=" card card-filter shadow mt-lg-0 mt-3">
             <app-product-filter
               (filterApplied)="onFilterApplied($event)"
             ></app-product-filter>
@@ -24,7 +11,7 @@
         </div>
         <div class="col-lg-9 col-md-8">
           <div class="card card-profile shadow mt-lg-0 mt-3">
-            <app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+            <!-- <app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb> -->
 
             <div class="px-4">
               <div class="text-center mt-5">
@@ -41,7 +28,7 @@
                           class="card-img-top"
                         />
                         <div class="card-body py-4">
-                          <h6 class="text-primary text-uppercase">
+                          <h6 class="text-primary">
                             {{ product.name }}
                           </h6>
                           <p class="card-text">{{ product.description }}</p>

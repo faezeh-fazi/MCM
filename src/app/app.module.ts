@@ -24,7 +24,6 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
-import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
@@ -38,7 +37,6 @@ import { LayoutComponent } from './layout/layout.component';
         LoginComponent,
         ProductDetailsComponent,
         ContactSellerComponent,
-        LayoutComponent,
 
     ],
     providers: [],

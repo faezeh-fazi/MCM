@@ -1,7 +1,8 @@
 
 .headroom {
     will-change: transform;
-    background-color: inherit;
+    background-color: white;
+    box-shadow: 0 1px 10px rgba(77, 40, 0, 0.1);
     @include transition($transition-base);
 }
 .headroom--pinned {

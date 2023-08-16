@@ -10,12 +10,12 @@ import { LandingComponent } from "./landing/landing.component";
 import { LoginComponent } from "./login/login.component";
 import { ProductsComponent } from "./products/products.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
-import { LayoutComponent } from "./layout/layout.component";
+import { AppComponent } from "./app.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: LayoutComponent,
+    component: AppComponent,
     children: [
       { path: "", component: HomeComponent },
       { path: "user-profile", component: ProfileComponent },
@@ -36,7 +36,7 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true,
+      useHash: false,
     }),
   ],
   exports: [],

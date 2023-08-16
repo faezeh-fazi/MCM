@@ -11,7 +11,7 @@
 }
 
 .seller-btn{
-  background-color: #ff7f50; /* Orange background color */
+  background-color: #f28b38; /* Orange background color */
   color: #fff; /* White text color */
   padding: 10px 20px; /* Padding to make the button not too big */
   border: none; /* Remove button border */
@@ -53,7 +53,7 @@
 
 .arrow:hover {
   background-color: #f8cdb2;
-  color: #ff5900;
+  color: #f28b38;
 }
 
 /* Styles for the thumbnails and arrows container */
@@ -90,5 +90,10 @@
 }
 
 .thumbnail.active {
-  border: 2px solid #ff5900;
+  border: 2px solid #f28b38;
+}
+
+.details-title{
+  display: flex;
+  justify-content: space-between;
 }
