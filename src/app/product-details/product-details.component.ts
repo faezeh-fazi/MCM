@@ -17,7 +17,7 @@ export class ProductDetailsComponent implements OnInit {
 
   breadcrumbItems = [
     { label: "Home", link: "/" },
-    { label: "Products", link: "/category/categoryname" },
+    { label: "Products", link: "/category/:categoryname" },
     { label: "Product Name", link: "/products/product-id" },
   ];
 

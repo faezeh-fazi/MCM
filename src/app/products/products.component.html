@@ -1,7 +1,7 @@
 <main class="profile-page">
   <section class="product-list">
     <div class="product-container">
-      <div class="row">
+      <div class="row product-row">
         <div class="col-lg-3 col-md-4">
           <div class=" card card-filter shadow mt-lg-0 mt-3">
             <app-product-filter
@@ -21,6 +21,7 @@
                       class="col-lg-4 col-md-6"
                       *ngFor="let product of getPaginatedProducts()"
                     >
+                    
                       <div class="card card-lift--hover shadow border-0 product-card">
                         <img
                           [src]="product.mainImageUrl"

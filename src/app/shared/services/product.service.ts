@@ -8,7 +8,7 @@ const mockProducts: Product[] = [
     id: 1,
     name: "Service 1",
     description : "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-    category: "services",
+    category: "education",
     price: 19.99,
     mainImageUrl: "https://img.buzzfeed.com/buzzfeed-static/static/2018-01/29/14/asset/buzzfeed-prod-fastlane-02/sub-buzz-29575-1517253581-23.jpg?downsize=900:*&output-format=auto&output-quality=auto",
     thumbnailUrls: ["https://via.placeholder.com/150"],
@@ -26,7 +26,7 @@ const mockProducts: Product[] = [
     id: 3,
     name: "Service 2",
     description : "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-    category: "job",
+    category: "furniture",
     price: 29.99,
     mainImageUrl: "https://via.placeholder.com/150",
     thumbnailUrls: ["https://via.placeholder.com/150"],
@@ -45,7 +45,7 @@ const mockProducts: Product[] = [
     id: 5,
     name: "Service 2",
     description : "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-    category: "job",
+    category: "electronic",
     price: 29.99,
     mainImageUrl: "https://www.byrdie.com/thmb/VnozTfu2yu4H5gRPtugHyuufXzI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/15-best-curly-hair-products-tout-8cd55384c9cc45e88b1ab40d627723df.jpg",
     thumbnailUrls: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3sab1IOvMPy0I-UJkDKRPm4YzTZZCLcCHtWD_t6M9YfP_dYSC4Tb40D94NVe7tm955u8&usqp=CAU" , "https://img.buzzfeed.com/buzzfeed-static/static/2018-01/29/14/asset/buzzfeed-prod-fastlane-02/sub-buzz-29575-1517253581-23.jpg?downsize=900:*&output-format=auto&output-quality=auto"],
@@ -91,15 +91,12 @@ export class ProductService {
 
   getProductsByCategory(categoryName: string): Observable<Product[]> {
     return new Observable<Product[]>((observer) => {
-      mockProducts.map((product) => ({
-        ...product,
-        categoryName: product.category,
-      }));
-      observer.next(mockProducts);
+      const filteredProducts = mockProducts.filter((product) => product.category === categoryName);
+      observer.next(filteredProducts);
       observer.complete();
     });
   }
-
+  
   getProductById(productId: number): Observable<Product> {
     // Implement your logic to find a product by its ID here
     const product = mockProducts.find((p) => p.id === productId);

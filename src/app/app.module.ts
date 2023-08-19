@@ -24,6 +24,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { LoadingComponent } from './shared/loading/loading.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
         LoginComponent,
         ProductDetailsComponent,
         ContactSellerComponent,
+        LoadingComponent,
 
     ],
     providers: [],
@@ -54,6 +57,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
         MatDialogModule,
         BreadcrumbModule,
         ReactiveFormsModule,
+        MatProgressSpinnerModule
     ]
 })
 export class AppModule { }

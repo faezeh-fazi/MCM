@@ -13,44 +13,46 @@ interface CardItem {
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
+  isLoading: boolean = true;
+
   cardItems: CardItem[] = [
     {
-      icon: "ni ni-check-bold",
+      icon: "ni ni-bus-front-12",
       name: "vehicles",
       title: "Vehicles",
-      color: "warning",
+      color: "primary",
       description: "Description for Download Argon",
     },
     {
-      icon: "ni ni-check-bold",
+      icon: "ni ni-books",
       name: "education",
       title: "Education",
       color: "primary",
       description: "Description for Download Argon",
     },
     {
-      icon: "ni ni-check-bold",
+      icon: "ni ni-settings",
       name: "services",
       title: "Services",
-      color: "warning",
+      color: "primary",
       description: "Description for Download Argon",
     },
     {
-      icon: "ni ni-istanbul",
+      icon: "ni ni-mobile-button",
       name: "electronic",
       title: "Electronic",
-      color: "success",
+      color: "primary",
       description: "Description for Build Something",
     },
     {
-      icon: "ni ni-planet",
+      icon: "ni ni-bulb-61",
       name: "furniture",
       title: "Furniture",
-      color: "warning",
+      color: "primary",
       description: "Description for Prepare Launch",
     },
     {
-      icon: "ni ni-check-bold",
+      icon: "ni ni-briefcase-24",
       name: "job",
       title: "Job",
       color: "primary",

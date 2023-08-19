@@ -15,11 +15,19 @@ export class ProductsComponent implements OnInit {
   totalPages: number[] = [];
 
   breadcrumbItems = [
-    { label: 'Home', link: '/' },
-    { label: 'Products', link: '/category/categoryname' },
-    { label: 'Product Name', link: '/products/product-id' },
+    { label: "Home", link: "/" },
+    { label: "Products", link: "/category/categoryname" },
+    { label: "Product Name", link: "/products/product-id" },
   ];
-  constructor(private productService: ProductService, private route: ActivatedRoute) {}
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) {
+    this.route.paramMap.subscribe((params) => {
+      const categoryName = params.get("categoryName");
+      this.loadProductsByCategory(categoryName);
+    })
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
@@ -35,14 +43,19 @@ export class ProductsComponent implements OnInit {
   }
 
   loadProductsByCategory(categoryName: string) {
-    this.productService.getProductsByCategory(categoryName).subscribe((products) => {
-      this.products = products;
-      this.calculateTotalPages();
-    });
+    this.productService
+      .getProductsByCategory(categoryName)
+      .subscribe((products) => {
+        this.products = products;
+        this.calculateTotalPages();
+      });
   }
 
   calculateTotalPages() {
-    this.totalPages = Array.from({ length: Math.ceil(this.products.length / this.itemsPerPage) }, (_, i) => i + 1);
+    this.totalPages = Array.from(
+      { length: Math.ceil(this.products.length / this.itemsPerPage) },
+      (_, i) => i + 1
+    );
   }
 
   goToPage(page: number) {
